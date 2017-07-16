@@ -1,0 +1,18 @@
+
+
+
+
+<div class="row"></div>
+     
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Personas</h4></li>
+    <a href="" *ngFor="let item of personas | async" 
+        class="collection-item"  
+        (click)="detalle((item)?.$key);false">{{(item)?.numero||(item)?.$key}}<br/>
+        {{(item)?.nombre}}
+        
+    </a>
+    <a href="" class="collection-item active" (click)="nuevo();false">Nueva Persona</a> 
+    <!--a href="#!" (click)="borrarExpediente((item)?.$key)" class="secondary-content"><i class="material-icons">send</i></a-->
+</ul>
+

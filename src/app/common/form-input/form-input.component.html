@@ -1,0 +1,16 @@
+            <label for="expedient_number">Número</label>
+
+            <input class="form-control"
+                type="text" 
+                id  ="expedient_number" 
+                name="expedient_number"
+                [required]="true"
+                [hidden]="false"
+                [ngModel]="(model|async)?.numero"
+                (ngModelChange)="model.update({numero: $event})"
+                #expedient_number = "ngModel" >
+
+            <span class="alert alert-danger" 
+                [hidden]="expedient_number.valid || expedient_number.pristine">
+                    Campo requerido
+            </span>

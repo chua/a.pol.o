@@ -1,0 +1,143 @@
+
+<form #expedienteForm="ngForm">
+
+    <div class="row">
+        
+
+        <div class="form-group col s12">
+            
+            <label for="expedient_number">Número</label>
+
+            <input class="form-control"
+                type="text" 
+                id  ="expedient_number" 
+                name="expedient_number"
+                [required]="true"
+                [hidden]="false"
+                [ngModel]="(model|async)?.numero"
+                (ngModelChange)="model.update({numero: $event})"
+                #expedient_number = "ngModel" >
+
+            <span class="alert alert-danger" 
+                [hidden]="expedient_number.valid || expedient_number.pristine">
+                    Campo requerido
+            </span>
+        </div>
+
+    </div>      
+    
+
+    <div class="row">    
+
+
+        <div class="form-group col s12">
+            
+            <label for="expedient_date">Fecha</label>
+
+            <input class="form-control"
+                type="date" 
+                id  ="expedient_date" 
+                name="expedient_date"
+                [required]="true"
+                [hidden]="false"
+                [ngModel]="(model|async)?.fecha"
+                (ngModelChange)="model.update({fecha: $event})"
+                #expedient_date = "ngModel" >
+
+            <span class="alert alert-danger"
+                [hidden]="expedient_date.valid || expedient_date.pristine">
+                    Campo requerido
+            </span>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group col 12">
+            
+            <label for="expedient_time">Hora</label>
+
+            <input class="form-control"
+                type="time" 
+                id  ="expedient_time" 
+                name="expedient_time"
+                [required]="true"
+                [hidden]="false"
+                [ngModel]="(model|async)?.hora"
+                #expedient_time = "ngModel" >
+
+            <span class="alert alert-danger"
+                [hidden]="expedient_time.valid || expedient_time.pristine">
+                    Campo requerido
+            </span>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="form-group col s12">
+        
+        <label for="expedient_place">Lugar hecho</label>
+
+        <input class="form-control"
+               type="text" 
+               id  ="expedient_place" 
+               name="expedient_place"
+               [required]="true"
+               [hidden]="false"
+               [ngModel]="(model|async)?.lugar"
+               #expedient_place = "ngModel" >
+
+        <span class="alert alert-danger"
+              [hidden]="expedient_place.valid || expedient_place.pristine">
+                Campo requerido
+        </span>
+      </div>
+
+    </div>
+
+
+    
+        <div class="form-group col-sm-6">
+        
+        <label for="expedient_tip_instructor">TIP Instructor</label>
+
+        <input class="form-control"
+               type="text" 
+               id  ="expedient_tip_instructor" 
+               name="expedient_tip_instructor"
+               [required]="true"
+               [hidden]="false"
+               [ngModel]="(model|async)?.instructor"
+               #expedient_tip_instructor = "ngModel" >
+
+        <span class="alert alert-danger"
+              [hidden]="expedient_tip_instructor.valid || expedient_tip_instructor.pristine">
+                Campo requerido
+        </span>
+    </div>
+
+
+        <div class="form-group col-sm-6">
+        
+        <label for="expedient_tip_secretario">TIP Secretario</label>
+
+        <input class="form-control"
+               type="text" 
+               id  ="expedient_tip_secretario" 
+               name="expedient_tip_secretario"
+               [required]="false"
+               [hidden]="false"
+               [ngModel]="(model|async)?.secretario"
+               #expedient_tip_secretario = "ngModel" >
+
+        <span class="alert alert-danger"
+              [hidden]="expedient_tip_secretario.valid || expedient_tip_secretario.pristine">
+                Campo requerido
+        </span>
+    </div>
+
+
+  </form>
+

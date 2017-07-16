@@ -1,0 +1,123 @@
+<!-- Le ponemos nombre al formulario y cuando se envié que lance un método -->
+    <form #alcoholForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-12">
+      
+
+        <div class="form-group col-md-6">
+          <label for="fecha_inicio">Fecha</label>
+          <input type="date" class="form-control" [(ngModel)]="fecha_inicio" name="fecha_inicio">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="hora_inicio">Hora</label>
+          <input type="time" class="form-control"
+            [(ngModel)]="hora_inicio" name="hora_inicio" 
+            value="{{hora_inicio}}">
+        </div>
+
+        <div class="form-group col-md-12">
+          <label for="nombre_completo">Nombre</label>
+          <input type="text" class="form-control" required
+            [(ngModel)]="nombre_completo" name="nombre_completo">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label form="etilometro_homologado">Etilometro marca</label>
+          <input type="text" class="form-control" [(ngModel)]="etilometro_homologado" name="etilometro_homologado">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label form="etilometro_numero">etilometro_numero</label>
+          <input type="text" class="form-control" [(ngModel)]="etilometro_numero" name="etilometro_numero">
+        </div>
+        
+        
+
+<!--
+         <p>
+            <label>Ciudad:</label>
+            <input class="form-control" type="text" #apellidos="ngForm" ngControl="apellidos" [(ngModel)]="usuario.apellidos" required pattern="[A-Za-z]*"/>
+            <span *ngIf="!apellidos.valid && apellidos.touched">Los apellidos son obligatorios</span>
+        </p>
+         <p>
+            <label>Email:</label>
+            <input class="form-control" type="email" #email="ngForm" ngControl="email" [(ngModel)]="usuario.email" required/>
+            <span *ngIf="!email.valid && email.touched">El email es obligatorio</span>
+        </p>
+        <p>
+            <label>Contraseña:</label>
+            <input class="form-control" type="password" #password="ngForm" ngControl="password" [(ngModel)]="usuario.password" required />
+            <span *ngIf="!password.valid && password.touched">La contraseña es obligatorio</span>
+        </p>
+        <input type="submit" value="Enviar" class="btn btn-success" />
+
+-->
+    </form>
+ 
+<div class="clearfix"></div>
+<hr/>
+
+
+
+<h2>Diligencia de determinación del grado de alcoholemia</h2>
+
+<p>
+  En {{ciudad_lugar}} siendo las {{hora_inicio}} horas del día {{fecha_inicio|date:'shortDate'}}, 
+  se requiere {{sexoH? 'al': 'a la'}} conductor{{sexoH?'':'a'}} {{sexoH?'D':'Dña'}}. {{nombre_completo}}, 
+  para que se someta a la prueba de determinación del grado de impregnación alcohólica por el 
+  método del aire espirado, utilizando para ello el etilómetro oficialmente autorizado 
+  marca {{etilometro_homologado}}, número {{etilometro_numero}}.
+</p>
+<p>
+  Se informa en éste acto {{sexoH? 'al': 'a la'}} conductor{{sexoH?'':'a'}} de la mecánica de su
+  funcionamiento, siendo el procedimiento seguido para efectuar las pruebas de detección alcohólica 
+  mediante el aire espirado, y en ambas pruebas se utiliza una boquilla de único uso, desprecintadas
+  por el interesado, utilizando para ello el etilómetro reseñado, manifestando su conformidad.
+</p>
+
+<p>
+  Realizada prueba, a las {{prueba_1_hora}} horas, dando ésta un resultado de {{prueba_1_resultado}} mg. 
+  de alcohol por litro de aire espirado ({{prueba_1_resultado }} mg./l.).
+</p>
+
+<p>
+  Se comunica a la persona que se le va a someter, a efectos de contraste, a la práctica de una
+  segunda prueba idéntica a la anterior. Así pues, siendo las {{prueba_2_hora}} horas del día {{prueba_2_fecha}},
+  se procede a la realización de la segunda prueba, utilizando para ello el etilómetro homologado ya indicado
+  arrojando un resultado de {{prueba_2_resultado}} mg. de alcohol por litro de aire espirado 
+  ({{prueba_2_resultado}} mg./l.).
+</p>
+
+<p>
+  Durante el tiempo transcurrido entre ambas pruebas {{sexoH? 'el': 'la'}} conductor{{sexoH?'':'a'}} implicad{{sexoH?'o':'a'}} 
+  no ha consumido bebidas alcohólicas.
+</p>
+
+<p>
+  Se informa {{sexoH? 'al': 'a la'}} implicad{{sexoH?'o':'a'}} del derecho a contrastar los resultados obtenidos anteriormente
+  mediante análisis de sangre, orina u otros análogos, que el personal del Centro Médico al que sea
+  trasladad{{sexoH? 'o': 'a'}} estime más adecuado, quedando igualmente informado que el importe de dichos análisis
+  deberá ser previamente depositado por el interesado y con él se atenderá al pago cuando el resultado de
+  la prueba de contraste sea positivo (art.23 R.G.C.), manifestando que {{prueba_contraste}}.
+  </p>
+
+
+<p>[]
+Conducir un vehículo bajo los efectos del alcohol puede suponer un delito contra la seguridad
+
+vial tipificado en el artículo 379.2 del Código Penal, por lo que se instruye atestado con
+
+número______________, siendo remitido al Juzgado de Instrucción número ____________ de Elche.
+</p>
+
+<p>
+Conducir un vehículo a motor con una tasa de alcohol superior a 0.25 mg/l supone una
+
+infracción del artículo 20 del Reglamento General de Circulación formulándose por ello denuncia con
+
+número de boletín __________________________________ del Excmo. Ayuntamiento de Elche.
+</p>
+
+
+Y para que así conste, una vez leída y hallándola el/la implicado/a conforme, firma la presente
+
+en unión de los Agentes Instructores.

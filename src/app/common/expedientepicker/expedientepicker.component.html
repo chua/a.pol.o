@@ -1,0 +1,8 @@
+<select class="form-control" (change)="onSelect($event.target.value)">
+  <option value="-1" disabled>Selecciona un expediente de la lista</option>
+  <option *ngFor="let exp of expedients$ | async"
+            [value] ="exp.$key"> 
+            {{exp.$key}}
+  </option>
+</select>
+   

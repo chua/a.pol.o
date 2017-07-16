@@ -1,0 +1,23 @@
+
+
+<div class="card-panel orange lighten-2">
+    <p>¡Recuerda! este programa es una herramienta que agiliza la labor, pero
+        su objetivo no es almacenar información así que ve eliminándola conforme
+        vaya dejando de ser útil.
+    </p>   
+</div>
+
+<div class="row"></div>
+     
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Expedientes</h4></li>
+    <a href="" *ngFor="let item of expedientes | async" 
+        class="collection-item"  
+        (click)="verDetalle((item)?.$key);false">{{(item)?.numero||(item)?.$key}}<br/>
+        {{(item)?.lugar}}
+        
+    </a>
+    <a href="" class="collection-item active" (click)="nuevoExpediente();false">Nuevo Expediente</a> 
+    <!--a href="#!" (click)="borrarExpediente((item)?.$key)" class="secondary-content"><i class="material-icons">send</i></a-->
+</ul>
+

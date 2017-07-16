@@ -1,0 +1,55 @@
+
+<form #personaForm="ngForm">
+
+    <div class="row">
+        
+
+        <div class="form-group col s12">
+            
+            <label for="p_nombre">Nombre completo</label>
+
+            <input class="form-control"
+                type="text" 
+                id  ="p_nombre" 
+                name="p_nombre"
+                [required]="true"
+                [hidden]="false"
+                [ngModel]="(model|async)?.nombre"
+                (ngModelChange)="model.update({numero: $event})"
+                #p_nombre = "ngModel" >
+
+            <span class="alert alert-danger" 
+                [hidden]="p_nombre.valid || p_nombre.pristine">
+                    Campo requerido
+            </span>
+        </div>
+
+    </div>      
+    
+
+    <div class="row">    
+
+
+        <div class="form-group col s12">
+            
+            <label for="p_nacimiento">Fecha nacimiento</label>
+
+            <input class="form-control"
+                type="date" 
+                id  ="p_nacimiento" 
+                name="p_nacimiento"
+                [required]="true"
+                [hidden]="false"
+                [ngModel]="(model|async)?.nacimiento"
+                #p_nacimiento = "ngModel" >
+
+            <span class="alert alert-danger"
+                [hidden]="p_nacimiento.valid || p_nacimiento.pristine">
+                    Campo requerido
+            </span>
+        </div>
+    </div>
+
+
+  </form>
+
